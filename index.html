@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#087f5b">
+  <title>GramHealth | Your Health, Closer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home">
+      <span class="brand-logo">✚</span>
+      <span>GramHealth<small>Your Health, Closer</small></span>
+    </a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#assistant">Health Assistant</a>
+      <a href="#finder">Find Healthcare</a>
+      <a href="#awareness">Health Awareness</a>
+    </nav>
+    <a class="nav-button" href="#assistant">Get Started ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">HEALTHCARE FOR EVERY COMMUNITY</span>
+        <h1>Better healthcare.<br><span>Closer to home.</span></h1>
+        <p>Understand your health concerns, explore nearby healthcare facilities, and find reliable next steps — all in one place.</p>
+        <div class="hero-buttons">
+          <a href="#assistant" class="btn primary">Explore Health Assistant →</a>
+          <a href="#finder" class="btn secondary">Find Nearby Care</a>
+        </div>
+        <div class="hero-note">✓ Accessible &nbsp; ✓ Simple to use &nbsp; ✓ Community focused</div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-circle">✚</div>
+        <div class="floating-card">
+          <span class="online-dot"></span>
+          <div><strong>Your health matters</strong><p>Learn, explore and take the next step.</p></div>
+        </div>
+        <span class="visual-tag">CARE WITHOUT DISTANCE</span>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-title">
+        <span class="eyebrow">OUR SERVICES</span>
+        <h2>Healthcare made simpler</h2>
+        <p>Helpful tools to support your everyday health journey.</p>
+      </div>
+      <div class="feature-grid">
+        <a href="#assistant" class="feature-card">
+          <div class="feature-icon green">♡</div>
+          <h3>Health Assistant</h3>
+          <p>Describe your concern by typing or using your voice.</p>
+          <span>Explore assistant →</span>
+        </a>
+        <a href="#finder" class="feature-card">
+          <div class="feature-icon blue">⌖</div>
+          <h3>Nearby Healthcare</h3>
+          <p>Search mapped hospitals, clinics and health centres.</p>
+          <span>Find healthcare →</span>
+        </a>
+        <a href="#awareness" class="feature-card">
+          <div class="feature-icon purple">✚</div>
+          <h3>Health Awareness</h3>
+          <p>Explore simple preventive health information.</p>
+          <span>Learn more →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="work-section" id="assistant">
+      <div class="panel">
+        <span class="eyebrow">YOUR HEALTH, YOUR VOICE</span>
+        <h2>Health Assistant</h2>
+        <p class="muted">Share what you are experiencing to receive basic health information and guidance.</p>
+
+        <form id="healthForm">
+          <label for="age">Your age group</label>
+          <select id="age">
+            <option value="">Prefer not to say</option>
+            <option value="child">Under 13</option>
+            <option value="teen">13–17 years</option>
+            <option value="adult">18–39 years</option>
+            <option value="middle">40–59 years</option>
+            <option value="senior">60+ years</option>
+          </select>
+
+          <label for="symptom">Select a concern (optional)</label>
+          <select id="symptom">
+            <option value="">Choose a symptom</option>
+            <option value="fever">Fever</option>
+            <option value="cough">Cough or cold</option>
+            <option value="headache">Headache</option>
+            <option value="stomach">Stomach discomfort</option>
+            <option value="weakness">Weakness or fatigue</option>
+            <option value="skin">Skin concern</option>
+            <option value="other">Other concern</option>
+          </select>
+
+          <label for="message">Describe your problem</label>
+          <textarea id="message" rows="4" maxlength="1500"
+            placeholder="For example: I have had a cough since yesterday. How should I take care of myself?"
+            required></textarea>
+
+          <div class="voice-row">
+            <button type="button" id="voiceBtn" class="btn secondary">🎙 Speak your problem</button>
+            <span id="voiceStatus" class="muted small" aria-live="polite">Voice input requires browser support.</span>
+          </div>
+
+          <button type="submit" id="sendBtn" class="btn primary full">Get Health Guidance →</button>
+        </form>
+
+        <div id="healthResult" class="result" hidden aria-live="polite"></div>
+        <p class="disclaimer">This is a basic educational demo, not a medical diagnosis. Do not use it to choose medicines or delay professional care.</p>
+      </div>
+
+      <div class="panel finder-panel" id="finder">
+        <span class="eyebrow">CARE CLOSE TO YOU</span>
+        <h2>Find hospitals & clinics</h2>
+        <p class="muted">Search by village, town, city or PIN code. You can also choose to share your location.</p>
+
+        <form id="locationForm">
+          <label for="location">Enter your location</label>
+          <input id="location" type="text" maxlength="150"
+            placeholder="e.g. Modinagar, Uttar Pradesh" required>
+          <div class="location-buttons">
+            <button type="submit" id="searchBtn" class="btn primary">Search Nearby Care</button>
+            <button type="button" id="currentLocationBtn" class="btn secondary">◎ Use My Location</button>
+          </div>
+        </form>
+
+        <div id="facilityResults" class="facility-results" aria-live="polite"></div>
+        <p class="disclaimer">Listings use OpenStreetMap data and may be incomplete or outdated. Confirm details before travelling.</p>
+      </div>
+    </section>
+
+    <section class="section awareness" id="awareness">
+      <div class="section-title">
+        <span class="eyebrow">SMALL STEPS, BETTER HEALTH</span>
+        <h2>Health awareness</h2>
+        <p>Simple habits can support a healthier life.</p>
+      </div>
+      <div class="awareness-grid">
+        <article class="awareness-card"><span>💧</span><h3>Safe Drinking Water</h3><p>Use safe drinking water and follow local water-safety guidance.</p></article>
+        <article class="awareness-card"><span>🧼</span><h3>Personal Hygiene</h3><p>Wash your hands regularly, especially before eating and preparing food.</p></article>
+        <article class="awareness-card"><span>🩺</span><h3>Routine Check-ups</h3><p>Consult a healthcare professional about appropriate preventive check-ups.</p></article>
+      </div>
+    </section>
+
+    <section class="emergency">
+      <div><h3>Experiencing a medical emergency?</h3><p>Seek immediate professional help for severe or sudden symptoms. Do not wait for an online response.</p></div>
+      <a href="https://112.gov.in/" target="_blank" rel="noopener noreferrer">India emergency services ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#home"><span class="brand-logo">✚</span><span>GramHealth<small>Your Health, Closer</small></span></a>
+    <p>Built to support healthcare awareness and access.</p>
+    <p class="footer-note">Educational prototype · Not a medical diagnosis service</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
